@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${project.artifactId}" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
+
+
+    <feature name="${project.artifactId}" version="${project.version}">
+        <bundle>mvn:commons-io/commons-io/2.5</bundle>
+
+        <feature version="${wicket.version}">wicket</feature>
+
+        <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version}</bundle>
+        <config name='${osgi.config.name}'/>
+    </feature>
+
+
+    <feature name="wicket" version="${wicket.version}">
+        <feature>war</feature>
+        <!--Wicket-->
+        <bundle>mvn:org.apache.wicket/wicket-core/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-auth-roles/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-extensions/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-request/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-util/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-ioc/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-spring/${wicket.version}</bundle>
+    </feature>
+
+</features>
